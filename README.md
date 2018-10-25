@@ -2,7 +2,7 @@
 
 I often stay in hostels and have to pull out my wallet to pay for things (e.g. renting a bike, doing laundry, staying one more night, buying food ..) more often than I want.
 
-The idea is that you have the ethereum address of an ho(s)tel anyway after booking with [winding-tree](https://windingtree.com) (not currently part of the API - but as far as I understood, by talking to the team, this is coming in the future) - so I can just pull out my phone and sign a quickly sign a transaction instead of having to bother with clumsy old school payment methods. In order of having better UX, more privacy and less transaction costs I want to leverage off chain transactions for this (I also wanted to use the chance to get familiar with the [liquidity.network](https://liquidity.network) as they are present at the hackathon where this project was initiated)
+The idea is that you have the ethereum address of an ho(s)tel anyway after booking with [winding-tree](https://windingtree.com) (not currently part of the API - but as far as I understood, by talking to the team, this is coming in the future) - so I can just pull out my phone and quickly sign a transaction instead of having to bother with clumsy old school payment methods. In order of having better UX, more privacy and less transaction costs I want to leverage off chain transactions for this (I also wanted to use the chance to get familiar with the [liquidity.network](https://liquidity.network) as they are present and mentoring at the hackathon where this project was initiated)
 
 The start of the project is an Android app that displays different options for accommodation supplements and depending on what the user chooses shows a [liquidity.network](https://liquidity.network) QR-Code so the user can pay for it quickly.
 
@@ -24,6 +24,12 @@ The idea is that this app could be installed in the ho(s)tel on a tablet mounted
  * https://pixabay.com/en/bed-metal-motel-pillow-gray-hotel-310382
  * https://www.goodfreephotos.com/vector-images/dumbbells-vector-clipart.png.php
  
+# Context
+
+ * https://github.com/windingtree/wt-hackathon/issues/10
+ * https://github.com/windingtree/wt-hackathon/issues/4
+ * https://windingtree.com/winding-tree-hackathon-prague-2018
+
 # License
 
  GPLv3
