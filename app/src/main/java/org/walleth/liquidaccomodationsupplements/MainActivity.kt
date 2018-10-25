@@ -17,6 +17,7 @@ import okhttp3.Request
 import okhttp3.RequestBody
 import org.walleth.liquidaccomodationsupplements.model.Invoice
 import org.walleth.liquidaccomodationsupplements.model.InvoiceRequest
+import org.walleth.liquidaccomodationsupplements.model.WalletInformation
 
 val JSON_MEDIA_TYPE = MediaType.parse("application/json")
 
@@ -58,6 +59,21 @@ class LiquidityAPI(
         return result?.let { adapter.fromJson(result) }
     }
 
+    fun getWalletInformation(): WalletInformation? {
+
+        val adapter = moshi.adapter(WalletInformation::class.java)
+
+        val request = Request.Builder()
+            .url("$baseURL/wallet/information")
+            .build()
+
+        val response = okHttpClient.newCall(request).execute()
+
+        val result = response.body()?.string()
+
+        return result?.let { adapter.fromJson(result) }
+    }
+
 }
 
 class MainActivity : AppCompatActivity() {
@@ -73,19 +89,26 @@ class MainActivity : AppCompatActivity() {
 
         Thread(Runnable {
 
-            val address = "0x43636b77d9FdE1A2F7e0A6554FA5A9A5bc4253D4"
-            val invoiceRequest = InvoiceRequest(1, address)
-            val invoice = api.requestInvoice(invoiceRequest)
+            val walletInformation = api.getWalletInformation()
 
-            runOnUiThread {
-                Log.i("", "got invoice $invoice")
-                qr_code.setQRCode(invoice?.encoded?.raw!!)
-            }
+            if (walletInformation == null) {
 
-            while (true) {
-                SystemClock.sleep(100)
-                val transactions = api.getTransactions()
-                Log.i("","transactions:" + transactions.toString())
+            } else {
+                val address = walletInformation.address
+
+                val invoiceRequest = InvoiceRequest(1, address)
+                val invoice = api.requestInvoice(invoiceRequest)
+
+                runOnUiThread {
+                    debug_text_view.text = "address: $address \nnonce: ${invoice?.nonce}"
+                    qr_code.setQRCode(invoice?.encoded?.raw!!)
+                }
+
+                while (true) {
+                    SystemClock.sleep(100)
+                    val transactions = api.getTransactions()
+                    Log.i("", "transactions:" + transactions.toString())
+                }
             }
         }).start()
 
