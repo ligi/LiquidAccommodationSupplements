@@ -8,6 +8,13 @@ The start of the project is an Android app that displays different options for a
 
 Ideally at some point accommodation supplements (btw.: if someone has a better name for this please shoot) are part of the [winding-tree](https://windingtree.com) API. This way you might not even have to use a QR-Code but could directly do it from a booking app (which currently makes no sense to create as the search and booking API is not yet present). 
 
+Usage:
+
+Currently it is only running on an emulator as it wants to connect to the local liquidity network automator. This restriction will drop with a next version of the liquidity network where the automator is not required anymore.
+So start the automator as described here: https://liquidity-sdk.readthedocs.io/en/latest/guide/index.html
+Then start the app in the emulator (on the same computer) 
+In the app you can click on the supplement you want and then you can scan the QR-code on the right side to pay for it with the liquidity wallet (initially I wanted to add liquidity.network support in [WallETH](https://walleth.org) - unfortunately this is currently prevented by the liquidity.network - but this will change in the future as @thibmeu told me.   
+
 Pictures credits:
 
  * http://www.publicdomainfiles.com/show_file.php?id=13493565617304
