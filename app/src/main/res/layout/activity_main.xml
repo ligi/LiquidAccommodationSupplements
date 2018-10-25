@@ -4,24 +4,21 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         tools:context=".MainActivity">
 
-
-    <android.support.v7.widget.AppCompatImageView
-            android:src="@drawable/bicycle"
-            android:layout_width="128dp"
-            android:layout_height="127dp"/>
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
 
 
     <android.support.v7.widget.AppCompatImageView
             android:id="@+id/qr_code"
             android:adjustViewBounds="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"    />
 
-    <TextView
-            android:id="@+id/debug_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 </LinearLayout>

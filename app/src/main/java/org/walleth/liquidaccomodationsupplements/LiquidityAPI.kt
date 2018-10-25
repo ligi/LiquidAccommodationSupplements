@@ -7,10 +7,10 @@ import com.squareup.moshi.Types
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody
-import org.walleth.liquidaccomodationsupplements.model.Invoice
-import org.walleth.liquidaccomodationsupplements.model.InvoiceRequest
 import org.walleth.liquidaccomodationsupplements.model.JSON_MEDIA_TYPE
-import org.walleth.liquidaccomodationsupplements.model.WalletInformation
+import org.walleth.liquidaccomodationsupplements.model.liquiditynetwork.Invoice
+import org.walleth.liquidaccomodationsupplements.model.liquiditynetwork.InvoiceRequest
+import org.walleth.liquidaccomodationsupplements.model.liquiditynetwork.WalletInformation
 
 class LiquidityAPI(
     private val baseURL: String,

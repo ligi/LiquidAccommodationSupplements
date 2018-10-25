@@ -1,4 +1,4 @@
-package org.walleth.liquidaccomodationsupplements.model
+package org.walleth.liquidaccomodationsupplements.model.liquiditynetwork
 
 enum class InvoiceStatus {
     pending, confirmed

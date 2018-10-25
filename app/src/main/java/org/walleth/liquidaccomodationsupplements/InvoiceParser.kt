@@ -1,7 +1,7 @@
 package org.walleth.liquidaccomodationsupplements
 
 import com.squareup.moshi.Moshi
-import org.walleth.liquidaccomodationsupplements.model.Invoice
+import org.walleth.liquidaccomodationsupplements.model.liquiditynetwork.Invoice
 
 fun parseInvoice(invoiceString: String, moshi: Moshi): Invoice? {
     val invoiceAdapter = moshi.adapter(Invoice::class.java)

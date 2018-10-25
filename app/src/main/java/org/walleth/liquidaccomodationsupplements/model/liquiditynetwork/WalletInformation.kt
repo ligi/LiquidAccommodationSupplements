@@ -1,4 +1,4 @@
-package org.walleth.liquidaccomodationsupplements.model
+package org.walleth.liquidaccomodationsupplements.model.liquiditynetwork
 
 data class OnChainWalletInformation(val amount: String)
 
@@ -7,4 +7,5 @@ data class WalletInformation(val address: String,
                              val hubContractAddress: String,
                              val hubProviderUrl: String,
                              val amount: String,
-                             val onchain: OnChainWalletInformation)
+                             val onchain: OnChainWalletInformation
+)
