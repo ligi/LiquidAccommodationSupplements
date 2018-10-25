@@ -8,11 +8,14 @@ The start of the project is an Android app that displays different options for a
 
 Ideally at some point accommodation supplements (btw.: if someone has a better name for this please shoot) are part of the [winding-tree](https://windingtree.com) API. This way you might not even have to use a QR-Code but could directly do it from a booking app (which currently makes no sense to create as the search and booking API is not yet present). 
 
-Pictures from:
+Pictures credits:
 
  * http://www.publicdomainfiles.com/show_file.php?id=13493565617304
  * http://pngimg.com/download/15576
-
+ * https://www.goodfreephotos.com/vector-images/burrito-vector.png.php
+ * https://pixabay.com/en/bed-metal-motel-pillow-gray-hotel-310382
+ * https://www.goodfreephotos.com/vector-images/dumbbells-vector-clipart.png.php
+ 
 License:
 
  GPLv3
