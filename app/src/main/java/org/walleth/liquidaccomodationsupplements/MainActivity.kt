@@ -7,7 +7,6 @@ import android.os.SystemClock
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.*
 import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,6 +17,7 @@ import org.walleth.liquidaccomodationsupplements.model.AccommodationSupplement
 import org.walleth.liquidaccomodationsupplements.model.AccommodationSupplements
 import org.walleth.liquidaccomodationsupplements.model.liquiditynetwork.Invoice
 import org.walleth.liquidaccomodationsupplements.model.liquiditynetwork.InvoiceRequest
+import org.walleth.liquidaccomodationsupplements.model.liquiditynetwork.InvoiceStatus
 import org.walleth.liquidaccomodationsupplements.model.liquiditynetwork.WalletInformation
 
 var currentSelectedSupplement = AccommodationSupplements.first()
@@ -93,8 +93,17 @@ class MainActivity : AppCompatActivity() {
 
                 while (true) {
                     SystemClock.sleep(100)
-                    val transactions = api.getTransactions()
-                    Log.i("", "transactions:" + transactions.toString())
+                    val transactions = api.getTransactions() ?: emptyMap()
+
+                    currentInvoice?.let {
+                        if (transactions[it.nonce.toString()]?.status == InvoiceStatus.confirmed) {
+                            runOnUiThread {
+                                alert("Got transaction for invoice with nonce " + it.nonce + " TODO: inform host about this")
+                                createInvoice()
+                            }
+
+                        }
+                    }
                 }
             }
         }).start()
